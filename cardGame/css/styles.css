@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+body {
+  font-family: 'Press Start 2P', cursive;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top:2.5rem;
+  background-color: #3d7dca;
+}
+
+h1{
+  font-size: 27px;
+}
+.gameContainer{
+  display: flex;
+  width: 92.5%;
+  height: 80%;
+  flex-flow: wrap;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.flipCardContainer {
+  width: 19%;
+  perspective: 1000px;
+  margin-bottom: 1rem;
+  background-color: white;
+}
+.flipCard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+.reveal, .stayFlipped{
+  transform: rotateY(180deg); /* <=>  rotateY(.5turn) */
+}
+/* .flipCardContainer:hover .flipCard {
+  transform: rotateY(180deg); /* <=>  rotateY(.5turn) */
+/* } */
+/* Position the front and back side */
+.flipCardFront, .flipCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+}
+.flipCardFront {
+  background-image: url(../images/front.png);
+  background-repeat: no-repeat;
+  border: 1px solid black;
+  background-size: contain;
+}
+.flipCardBack {
+  /* background-color: #517fa4; */
+  color: #fff;
+  transform: rotateY(180deg);
+}
+.flipCardFront img, .flipCardBack img{
+  width: 100%;
+  height: 100%;
+
+}
+
+.buttonContainer{
+  display: flex;
+  justify-content: center;
+}
+
+button{
+  border: none;
+  font-size: 3rem;
+  padding: 2rem;
+  border-radius: 5px;
+  margin-top: 3.5rem;
+}
+
+button:focus{
+  outline:none;
+}
+
+p{
+  font-size: 38px;
+  color: #ffcb05;
+}
